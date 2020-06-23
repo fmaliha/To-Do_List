@@ -1,0 +1,162 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-image: linear-gradient(120deg, #f6d365,#fda085);
+	color: white;
+	font-family: "Dosis", open-sans;
+	min-height: 100vh;
+
+}
+
+header{
+	font-size: 1rem;
+}
+
+
+header,
+form{
+	min-height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+form input,
+form button {
+	padding: .5rem;
+	font-size: 2rem;
+	border:none;
+	background: white;
+}
+
+form button{
+	color: #fda085;
+	background:white;
+	cursor: pointer;
+	transition: all 0.3s ease;            /*//delays the effect*/
+
+
+}
+
+form button:hover {
+background: #d88771;
+color: white;
+
+}
+
+ .todo-container {
+ 	display: flex;
+ 	justify-content: center;
+ 	/*align-items: center;*/
+ }
+
+ .todo-list {
+
+ 	 min-width: 60%;
+ 	 list-style: none;
+
+ }
+
+ .todo {
+ 	margin: 0.5rem;
+ 	background: white;
+ 	color: black;
+ 	font-size: 1.5rem;
+ 	display: flex;
+ 	justify-content: space-between;
+ 	align-items: center;
+ 	transition: all 0.5s ease; /*causes the line through first then*/
+ 	 						/*the item blur after complete button 
+ 	 						press otherwise the line through and blur 
+ 	 						happens at the same time*/
+ }
+
+ .todo li{
+ 	flex: 1;
+ }
+ .trash-btn ,
+ .complete-btn {
+ 	background: #ff6f47;
+ 	color: white;
+ 	border: none;
+ 	padding: 1rem;
+ 	cursor: pointer;
+ 	font-size: 1rem;
+ }
+.complete-btn {
+	margin-right: .5px;
+}
+ .complete-btn:hover {
+
+	background: rgb(73,204,73);
+ }
+
+ .trash-btn:hover {
+ 	background: red;  
+ }
+
+ .todo-item {
+ 	padding: 0rem .5rem; /*min to max related to interactive*/
+ }
+
+ .fa-trash, .fa-check {
+ 	pointer-events:none;  /* the icons become one as the button*/
+ }						 /*otherwise the button works only on the 
+ 						 padded area not over the icons*/
+
+
+.completed{
+	text-decoration: line-through;
+	opacity: 0.5;  /*hides & shows item*/
+}
+
+.fall {
+	transform: translateY(8rem) rotateZ(20deg);
+	opacity: 0; /*vanishes item*/
+}
+
+select {
+
+	-webkit-appearance:none;/*styles based on OS based theme (webkit as safari) and (blink based as chrome) & arrow sign goes off*/
+	-moz-appearance:none;/* styles based on OS based theme (gecko as firefox)*/
+	appearance:none;
+	outline: none;
+	border: none;
+}
+
+.select {
+
+	margin: 1rem;
+	position: relative;
+}
+
+select {
+ 	color: #ff6f47;
+ 	width: 10rem;
+ 	cursor: pointer;
+ 	padding: 1rem;
+}
+
+
+.select::after {      /*arrow sign*/
+
+content: "\25BC";
+position: absolute;
+background: #ff6f47;
+top: 0;
+right: 0;
+padding: 0.85rem;
+pointer-events: none;
+transition: all .5s ease; /*hover effect becomes smoother*/
+}
+
+.select:hover::after {
+	background: white;
+	color: #ff6f47;
+
+
+}
